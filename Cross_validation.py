@@ -28,7 +28,7 @@ print(df.head())
 X = df.drop('target',axis = 1)#Features
 y = df['target']
 
-##Step4 : Standardization ( Z-SScore Normalization)
+##Step4 : Standardization ( Z-Score Normalization)
 scaler= StandardScaler()
 x_scaled= scaler.fit_transform(X)
 
