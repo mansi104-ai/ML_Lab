@@ -12,7 +12,7 @@ if __name__ == "__main__":
     print('Server started')
 
     serve(
-        # app,
+        app,
         # host = '0.0.0.0',
         # port = 8080,
         threads = thread_per_worker
