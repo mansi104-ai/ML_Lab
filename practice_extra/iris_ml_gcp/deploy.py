@@ -5,8 +5,8 @@ import os
 app = Flask(__name__)
 
 #Load the model
-model_path = os.path.join(os.path.dirname('practice_extra/iris_ml_gcp'), 'savedmodel.sav')
-model = pickle.load(open(model_path, 'rb'))
+# model_path = os.path.join(os.path.dirname('practice_extra/iris_ml_gcp'), 'savedmodel.sav')
+model = pickle.load(open(os.path.join(os.path.dirname('practice_extra/iris_ml_gcp'), 'savedmodel.sav'), 'rb'))
 
 @app.route('/')
 def home():
