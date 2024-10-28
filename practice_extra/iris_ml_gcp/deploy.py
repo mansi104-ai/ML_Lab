@@ -1,10 +1,12 @@
 from flask import Flask,render_template,request
 import pickle
+import os
 
 app = Flask(__name__)
 
 #Load the model
-model = pickle.load(open('savedmodel.sav','rb'))
+model_path = os.path.join(os.path.dirname('practice_extra/iris_ml_gcp'), 'savedmodel.sav')
+model = pickle.load(open(model_path, 'rb'))
 
 @app.route('/')
 def home():
