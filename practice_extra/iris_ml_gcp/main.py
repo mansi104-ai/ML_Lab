@@ -1,7 +1,7 @@
 from waitress import serve
 from deploy import app
 import multiprocessing
-import savedmodel
+
 if __name__ == "__main__":
     #get cpu count
     num_cpus = multiprocessing.cpu_count()
