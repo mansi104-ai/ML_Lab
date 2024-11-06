@@ -1,0 +1,56 @@
+Solution 1 )
+from itertools import product
+
+def sum_all_possible_formulas(num_str, MOD):
+    n = len(num_str)
+    total_sum = 0
+    unique_sums = set()
+
+    # Generate all possible combinations of plus signs between digits
+    for mask in product([True, False], repeat=n-1):
+        formula = num_str[0]
+        for i in range(1, n):
+            if mask[i-1]:
+                formula += '+'
+            formula += num_str[i]
+        
+        # Evaluate the formula and add to unique sums
+        sum_value = eval(formula)
+        unique_sums.add(sum_value)
+    
+    # Sum all unique values and take modulo
+    total_sum = sum(unique_sums) % MOD
+    return total_sum
+
+# Example usage
+num_str = "1234"  # The string of digits
+MOD = 10**9 + 7   # The mystical modulo number
+result = sum_all_possible_formulas(num_str, MOD)
+print("Final grand total of all possible formulas (modulo {}): {}".format(MOD, result))
+
+
+Solution 2) 
+from itertools import product
+
+def sum_all_possible_formulas(num_str, MOD):
+    n = len(num_str)
+    total_sum = 0
+    unique_sums = set()
+
+    # Generate all possible combinations of plus signs between digits
+    for mask in product([True, False], repeat=n-1):
+        formula = num_str[0]
+        for i in range(1, n):
+            if mask[i-1]:
+                formula += '+'
+            formula += num_str[i]
+        
+        # Evaluate the formula and add to unique sums
+        sum_value = eval(formula)
+        unique_sums.add(sum_value)
+    
+    # Sum all unique values and take modulo
+    total_sum = sum(unique_sums) % MOD
+    return total_sum
+
+
